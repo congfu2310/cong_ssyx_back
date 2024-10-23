@@ -1,0 +1,15 @@
+# 忽略 .idea 文件夹（IDE 配置文件）
+.idea/
+
+# 忽略 .iml 文件（IntelliJ 项目的模块文件）
+*.iml
+
+# 忽略 Maven/Gradle 的构建输出
+target/
+build/
+
+# 忽略 IntelliJ 工作空间文件
+*.iws
+
+# 忽略日志文件
+*.log
