@@ -47,7 +47,7 @@ public class CouponInfo extends BaseEntity {
 	@TableField("end_time")
 	private Date endTime;
 
-	@ApiModelProperty(value = "使用范围[1->全场通用；2->指定商品;3->指定分类；]")
+	@ApiModelProperty(value = "使用范围[0->全场通用；1->指定分类；2->指定商品]")
 	@TableField("range_type")
 	private CouponRangeType rangeType;
 
@@ -72,7 +72,6 @@ public class CouponInfo extends BaseEntity {
 	private Integer receiveCount;
 
 	@ApiModelProperty(value = "过期时间")
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	@TableField("expire_time")
 	private Date expireTime;
 
