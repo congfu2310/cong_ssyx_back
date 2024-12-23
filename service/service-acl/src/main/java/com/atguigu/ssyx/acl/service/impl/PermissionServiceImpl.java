@@ -33,12 +33,13 @@ public class PermissionServiceImpl extends ServiceImpl<PermissionMapper, Permiss
         List<Long> idList = new ArrayList<>();
         //获取指定菜单下的所有子菜单ID，并将这些ID添加到 idList 中
         this.getAllPermissionId(id, idList);
+        idList.add(id);
         //调用方法批量删除
         baseMapper.deleteBatchIds(idList);
     }
 
     //找当前菜单ID下的所有子菜单ID
-    public void getAllPermissionId(Long id, List<Long> idList) {
+    private void getAllPermissionId(Long id, List<Long> idList) {
         //根据当前菜单id查询下面子菜单列表
         LambdaQueryWrapper<Permission> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(Permission::getPid, id);//where id = pid
